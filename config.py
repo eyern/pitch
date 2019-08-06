@@ -17,13 +17,8 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 class ProdConfig(Config):
-    '''
-    Production config child class
-
-    Args:
-        Config: The parent config class with general config classes
-    '''
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+
 
 class TestConfig(Config):
     '''

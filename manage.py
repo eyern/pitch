@@ -4,7 +4,7 @@ from flask_script import Manager,Server
 from flask_migrate import Migrate, MigrateCommand
 
 #Creating app instance
-app = create_app('test')
+app = create_app('production')
 
 manager = Manager(app)
 manager.add_command('server',Server)
@@ -20,7 +20,7 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 @manager.shell
-def make_shell_sontext():
+def make_shell_context():
     return dict(app = app,db = db,User = User,Role = Role )
 
 if __name__=='__main__':

@@ -15,9 +15,9 @@ def login():
             login_user(user,login_form.remember.data)
             return redirect(request.args.get('next') or url_for('main.index'))
 
-        flash('Invalid username or Password')
+        flash('Incorrect username or Password')
 
-    title = "The M.M.A Pitcher login"
+    title = "The Pitcher login"
     return render_template('auth/login.html',login_form = login_form,title=title)
 
 @auth.route('/register',methods = ["GET","POST"])
@@ -28,7 +28,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("Welcome to the M.M.A Pitcher","email/welcome_user",user.email,user=user)
+        mail_message("Welcome to the Pitcher","email/welcome_user",user.email,user=user)
 
         return redirect(url_for('auth.login'))
         title = "New Account"

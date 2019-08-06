@@ -1,1 +1,1 @@
-SECRET_KEY = 'aguero10'
+SECRET_KEY = 'eyern'
